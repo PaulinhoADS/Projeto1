@@ -2,17 +2,15 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <!-- Ajuste para responsividade em dispositivos móveis -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Apple Vitrine - Página Inicial</title>
-  <!-- Link para o CSS externo -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header/MENU fixo no topo: navegação entre as páginas -->
+  <!-- Header/MENU fixo no topo -->
   <header class="header">
     <div class="container nav-container">
-      <!-- Logo Apple, pode ser imagem svg/png (substitua o src conforme necessário) -->
+      <!-- Logo Apple -->
       <a href="index.html" class="logo" aria-label="Página Inicial">
         <img src="apple-logo.png" alt="Logo Apple">
       </a>
@@ -30,32 +28,35 @@
   <!-- Conteúdo principal da página inicial -->
   <main class="main-home">
     <section class="hero-section">
+      <!-- Shape decorativo de fundo -->
+      <div class="hero-bg-shape"></div>
       <div class="container hero-content">
-        <!-- Título de destaque da página inicial -->
+        <!-- Título principal -->
         <h1 class="hero-title">Descubra o universo Apple</h1>
         <p class="hero-subtitle">
           Tecnologia, inovação e design em um só lugar.<br>
           Conheça os produtos e a trajetória de uma das marcas mais admiradas do mundo.
         </p>
-        <!-- Menu visual com imagens dos produtos, cada imagem leva à respectiva página -->
+        <!-- Menu visual com imagens dos produtos -->
         <div class="product-menu">
-          <a href="portfolio.html" class="product-card">
+          <!-- Cada produto abre sua página exclusiva -->
+          <a href="macbook.html" class="product-card">
             <img src="macbook.png" alt="MacBook" class="product-img">
             <span>MacBook</span>
           </a>
-          <a href="portfolio.html" class="product-card">
+          <a href="iphone.html" class="product-card">
             <img src="iphone.png" alt="iPhone" class="product-img">
             <span>iPhone</span>
           </a>
-          <a href="portfolio.html" class="product-card">
+          <a href="ipad.html" class="product-card">
             <img src="ipad.png" alt="iPad" class="product-img">
             <span>iPad</span>
           </a>
-          <a href="portfolio.html" class="product-card">
+          <a href="applewatch.html" class="product-card">
             <img src="applewatch.png" alt="Apple Watch" class="product-img">
             <span>Apple Watch</span>
           </a>
-          <a href="portfolio.html" class="product-card">
+          <a href="airpods.html" class="product-card">
             <img src="airpods.png" alt="AirPods" class="product-img">
             <span>AirPods</span>
           </a>
@@ -64,10 +65,12 @@
     </section>
   </main>
 
-  <!-- Rodapé fixo com as informações do desenvolvedor -->
+  <!-- Rodapé fixo e discreto -->
   <footer class="footer">
     <div class="container">
-      <p>Criado por Paulo Cesar Leite para projeto Web front End - direitos reservados - 2025.</p>
+      <span class="copyright">
+        © Criado por Paulo Cesar Leite para projeto Web front End - direitos reservados - 2025.
+      </span>
     </div>
   </footer>
 </body>
