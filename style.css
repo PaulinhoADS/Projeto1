@@ -53,7 +53,7 @@ body {
   list-style: none;          /* sem marcadores */
 }
 
-.main-nav li {} /* item menu */
+.main-nav li {}
 
 .main-nav a {
   text-decoration: none;     /* sem sublinhado */
@@ -76,7 +76,20 @@ body {
   background: linear-gradient(120deg, #f5f6fa 60%, #edf0f5 100%); /* gradiente fundo */
   padding: 60px 0 40px 0;    /* espaçamento topo/baixo */
   text-align: center;        /* centraliza texto */
+  position: relative;
 }
+.hero-bg-shape {
+  position: absolute;
+  top: -30px;
+  left: -80px;
+  width: 230px;
+  height: 230px;
+  background: radial-gradient(circle, #e3eaff 60%, #d0e3ff 100%);
+  opacity: 0.4;
+  border-radius: 50%;
+  z-index: 0;
+}
+.hero-content { position: relative; z-index: 1; }
 
 .hero-title {
   font-size: 2.5rem;         /* tamanho título */
@@ -105,7 +118,7 @@ body {
 .product-card {
   background: #fff;          /* fundo branco */
   border-radius: 16px;       /* borda arredondada */
-  box-shadow: 0 6px 24px rgba(0,0,0,0.04); /* sombra leve */
+  box-shadow: 0 6px 24px rgba(0,0,0,0.07); /* sombra leve */
   display: flex;             /* flexbox card */
   flex-direction: column;    /* coluna */
   align-items: center;       /* centraliza itens */
@@ -116,12 +129,25 @@ body {
   max-width: 180px;          /* largura máxima */
   transition: transform 0.18s, box-shadow 0.18s; /* transição hover */
   border: 1px solid #e0e0e0; /* borda clara */
+  position: relative;
+  overflow: hidden;
+}
+.product-card::after {
+  /* detalhe sutil com cor, visual Apple */
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 8px;
+  background: linear-gradient(90deg,#0071e3 0%,#d0e3ff 100%);
+  opacity: 0.12;
+  border-radius: 0 0 16px 16px;
 }
 
 .product-card:hover {
   transform: translateY(-6px) scale(1.03); /* efeito hover */
-  box-shadow: 0 16px 32px rgba(0,113,227,0.07); /* sombra hover */
+  box-shadow: 0 16px 32px rgba(0,113,227,0.12); /* sombra hover */
   border-color: #0071e3;     /* borda azul */
+  z-index: 2;
 }
 
 .product-img {
@@ -131,7 +157,7 @@ body {
   border-radius: 18px;       /* arredonda imagem */
   margin-bottom: 12px;       /* espaço abaixo */
   background: #f6f7f9;       /* fundo imagem */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.04); /* sombra imagem */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06); /* sombra imagem */
 }
 
 /* Títulos dos cards */
@@ -159,13 +185,30 @@ body {
   max-width: 440px;          /* largura máxima */
   border-radius: 18px;       /* arredondada */
   margin-top: 24px;          /* espaço acima */
-  box-shadow: 0 6px 24px rgba(0,0,0,0.05); /* sombra leve */
+  box-shadow: 0 6px 24px rgba(0,0,0,0.09); /* sombra leve */
   display: block;            /* bloco */
 }
 
 /* Seção de texto geral */
 .section-content {
   padding: 56px 0 30px 0;    /* espaçamento interno */
+  position: relative;
+}
+.section-content .section-bg {
+  /* detalhe visual sutil */
+  position: absolute;
+  right: -80px;
+  bottom: -40px;
+  width: 190px;
+  height: 170px;
+  background: radial-gradient(circle, #e3eaff 65%, #d0e3ff 100%);
+  opacity: 0.18;
+  border-radius: 50%;
+  z-index: 0;
+}
+.section-content > *:not(.section-bg) {
+  position: relative;
+  z-index: 1;
 }
 
 /* Quem somos: lista de contato */
@@ -194,10 +237,81 @@ body {
   background: #f2f2f2;       /* fundo rodapé */
   color: #888;               /* texto rodapé */
   text-align: center;        /* centraliza texto */
-  padding: 22px 0 14px 0;    /* espaçamento interno */
-  font-size: 1em;            /* tamanho texto */
+  padding: 12px 0 6px 0;     /* espaçamento interno menor */
+  font-size: 0.92em;         /* fonte menor */
   border-top: 1px solid #eaeaea; /* borda topo */
   margin-top: 40px;          /* espaço acima */
+  letter-spacing: 0.2px;
+}
+.footer .copyright {
+  font-size: 0.88em;         /* fonte ainda menor */
+  color: #aaa;               /* cor mais clara */
+  margin-top: 2px;
+  opacity: 0.85;
+}
+
+/* Página exclusiva de produto */
+.product-detail-header {
+  text-align: center;
+  padding-top: 36px;
+  padding-bottom: 12px;
+  color: #232323;
+}
+.product-detail-img {
+  display: block;
+  margin: 0 auto 26px auto;
+  width: 220px;
+  max-width: 90vw;
+  height: auto;
+  border-radius: 30px;
+  box-shadow: 0 6px 36px rgba(0,113,227,0.10), 0 0px 0px #fff;
+  background: #f6f8fa;
+}
+.product-detail-section {
+  background: linear-gradient(101deg, #f7faff 88%, #d3eafd 100%);
+  border-radius: 20px;
+  max-width: 780px;
+  margin: 0 auto 32px auto;
+  padding: 36px 32px 28px 32px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+  position: relative;
+}
+
+.product-detail-section .detail-bg {
+  position: absolute;
+  left: -90px;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, #d0e3ff 60%, #fff 100%);
+  opacity: 0.14;
+  border-radius: 50%;
+  z-index: 0;
+}
+.product-detail-section > *:not(.detail-bg) {
+  position: relative;
+  z-index: 1;
+}
+.product-detail-section h2 {
+  color: #0071e3;
+  font-size: 2.1rem;
+  margin-bottom: 18px;
+}
+.product-detail-section p {
+  font-size: 1.15rem;
+  color: #222;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+.product-detail-features {
+  margin: 18px 0 0 0;
+  padding: 0 0 0 16px;
+}
+.product-detail-features li {
+  font-size: 1.06rem;
+  color: #2a2a2a;
+  margin-bottom: 6px;
+  list-style: disc;
 }
 
 /* Responsividade para tablets e smartphones */
@@ -213,6 +327,9 @@ body {
   }
   .portfolio-grid, .product-menu {
     gap: 18px;               /* espaço menor */
+  }
+  .product-detail-section {
+    padding: 24px 10px 18px 10px;
   }
 }
 
@@ -246,12 +363,18 @@ body {
   .presentation-img {
     max-width: 99vw;         /* largura total mobile */
   }
+  .product-detail-img {
+    width: 98vw;
+    max-width: 98vw;
+  }
+  .product-detail-section h2 { font-size: 1.2rem; }
 }
 
 /* Comentários explicativos:
-- Use .container para centralizar e limitar largura. centralização
-- .header e .footer são fixos, garantindo navegação e identificação em todas as páginas. cabeçalho/rodapé fixos
-- Use .product-card para produtos na home e no portfólio. card produto
-- A paleta é neutra, com destaque em azul Apple e leve sombra para dar profundidade. cores/neutro
-- Para imagens, use PNG de qualidade e ajuste o src conforme os nomes reais dos arquivos. imagens qualidade
+- .container centraliza e limita largura
+- .header/.footer fixos para navegação e identificação
+- .product-card para produtos do portfólio e home
+- .product-detail-section estiliza página individual do produto
+- Toques de cor: gradientes, shapes circulares, barras coloridas
+- Rodapé © com fonte pequena e discreta
 */
