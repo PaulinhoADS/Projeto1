@@ -39,11 +39,52 @@ body {
   height: 72px;              /* altura header */
 }
 
-/* Logo Apple */
+/* Bloco da logo da Apple no menu */
+/* 
+  .logo: Link que envolve a imagem da maçã e o texto "Home". 
+  Usa flexbox em coluna para alinhar verticalmente e centralizar. 
+  Torna todo o bloco (imagem + texto) clicável, levando para a página inicial.
+*/
+.logo {
+  display: flex;                  /* Organiza o conteúdo da logo em coluna */
+  flex-direction: column;         /* Coloca imagem e label um embaixo do outro */
+  align-items: center;            /* Centraliza tudo na horizontal */
+  text-decoration: none;          /* Remove sublinhado do link */
+}
+
+/* 
+  .logo img: Estiliza a imagem da maçã.
+  Define altura padrão, ajusta largura automaticamente e exibe como bloco.
+*/
 .logo img {
-  height: 38px;              /* altura logo */
-  width: auto;               /* largura auto */
-  display: block;            /* bloco */
+  height: 38px;                   /* Altura padrão da imagem da maçã */
+  width: auto;                    /* Largura automática para manter proporção */
+  display: block;                 /* Exibe a imagem como bloco (quebra linha após) */
+}
+
+/* 
+  .logo-label: Estiliza o texto "Home" abaixo da maçã.
+  Define fonte, cor, espaçamento, alinhamento e suaviza a opacidade.
+  Fica logo abaixo da imagem, centralizado.
+*/
+.logo-label {
+  font-size: 0.92em;              /* Tamanho levemente menor que o texto padrão */
+  color: #232323;                 /* Cor preta/cinza escura para o texto */
+  margin-top: 2px;                /* Pequeno espaço em cima, separando da imagem */
+  letter-spacing: 0.5px;          /* Espaço entre letras para suavizar */
+  font-weight: 500;               /* Peso médio da fonte */
+  text-align: center;             /* Centraliza o texto */
+  opacity: 0.95;                  /* Deixa o texto um pouco mais suave */
+  transition: color 0.2s;         /* Transição suave de cor ao passar mouse */
+}
+
+/*
+  .logo:hover .logo-label: 
+  Quando o mouse passa por cima da logo, muda a cor do texto "Home" para azul Apple,
+  criando um efeito visual de destaque para indicar que é clicável.
+*/
+.logo:hover .logo-label {
+  color: #0071e3;                 /* Cor azul Apple ao passar o mouse */
 }
 
 /* Menu de navegação */
