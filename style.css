@@ -275,12 +275,19 @@ body {
 
 /* Rodapé fixo em todas as páginas */
 .copyright {
+  position: fixed;         /* Fixa o elemento na tela, independente do scroll */
+  left: 0;                 /* Alinha à esquerda da tela */
+  bottom: 0;               /* Cola na parte inferior da tela */
+  width: 100%;             /* Ocupa toda a largura da janela */
+  background: none;        /* Sem faixa de fundo */
   text-align: center;      /* Centraliza o texto */
-  font-size: 0.92em;       /* Um pouco menor que o normal */
-  color: #aaa;             /* Cinza bem claro, pouco destaque */
-  margin: 28px 0 10px 0;   /* Espaço acima e abaixo */
-  font-weight: 400;        /* Peso normal */
-  letter-spacing: 0.5px;   /* Suave */
+  font-size: 0.92em;       /* Tamanho levemente menor para ser discreto */
+  color: #aaa;             /* Cinza claro, pouco destaque */
+  font-weight: 400;        /* Peso normal da fonte */
+  letter-spacing: 0.5px;   /* Espaçamento suave entre letras */
+  margin: 0;               /* Remove margens */
+  padding: 10px 0 8px 0;   /* Espaçamento interno acima e abaixo */
+  z-index: 999;            /* Garante que fique acima de outros elementos */
 }
 
 /* Página exclusiva de produto */
