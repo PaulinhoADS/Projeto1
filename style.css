@@ -40,11 +40,8 @@ body {
 }
 
 /* Bloco da logo da Apple no menu */
-/* 
-  .logo: Link que envolve a imagem da maçã e o texto "Home". 
-  Usa flexbox em coluna para alinhar verticalmente e centralizar. 
-  Torna todo o bloco (imagem + texto) clicável, levando para a página inicial.
-*/
+/* logo: Link que envolve a imagem da maçã e o texto "Home". */
+
 .logo {
   display: flex;                  /* Organiza o conteúdo da logo em coluna */
   flex-direction: column;         /* Coloca imagem e label um embaixo do outro */
@@ -57,7 +54,7 @@ body {
   Define altura padrão, ajusta largura automaticamente e exibe como bloco.
 */
 .logo img {
-  height: 38px;                   /* Altura padrão da imagem da maçã */
+  height: 50px;                   /* Altura padrão da imagem logo */
   width: auto;                    /* Largura automática para manter proporção */
   display: block;                 /* Exibe a imagem como bloco (quebra linha após) */
 }
