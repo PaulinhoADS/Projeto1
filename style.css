@@ -1,6 +1,6 @@
 /*
   Tema inspirado no visual Apple: fundo branco/cinza, títulos em preto, textos em cinza escuro,
-  destaques em azul e preto. Imagens com cantos arredondados e menu responsivo.
+  site mais clean e moderno. Imagens com cantos arredondados e menu responsivo.
 */
 
 /* Reset básico e fonte limpa */
@@ -40,7 +40,7 @@ body {
 }
 
 /* Bloco da logo da Apple no menu */
-/* logo: Link que envolve a imagem da maçã e o texto "Home". */
+/* logo: Link que envolve a logo e o texto "Home". */
 
 .logo {
   display: flex;                  /* Organiza o conteúdo da logo em coluna */
@@ -50,7 +50,7 @@ body {
 }
 
 /* 
-  .logo img: Estiliza a imagem da maçã.
+  .logo img: Estiliza a logo.
   Define altura padrão, ajusta largura automaticamente e exibe como bloco.
 */
 .logo img {
@@ -60,7 +60,7 @@ body {
 }
 
 /* 
-  .logo-label: Estiliza o texto "Home" abaixo da maçã.
+  .logo-label: Estiliza o texto "Home" abaixo da logo.
   Define fonte, cor, espaçamento, alinhamento e suaviza a opacidade.
   Fica logo abaixo da imagem, centralizado.
 */
@@ -77,7 +77,7 @@ body {
 
 /*
   .logo:hover .logo-label: 
-  Quando o mouse passa por cima da logo, muda a cor do texto "Home" para azul Apple,
+  Quando o mouse passa por cima da logo, muda a cor do texto "Home" para azul,
   criando um efeito visual de destaque para indicar que é clicável.
 */
 .logo:hover .logo-label {
@@ -116,18 +116,29 @@ body {
   text-align: center;        /* centraliza texto */
   position: relative;
 }
+
+/* .hero-bg-shape: Elemento decorativo do fundo da seção de destaque (hero).
+  Cria uma "mancha" circular suave, estilo Apple, atrás do conteúdo principal. */
+
 .hero-bg-shape {
-  position: absolute;
-  top: -30px;
-  left: -80px;
-  width: 230px;
-  height: 230px;
-  background: radial-gradient(circle, #e3eaff 60%, #d0e3ff 100%);
-  opacity: 0.4;
-  border-radius: 50%;
-  z-index: 0;
+  position: absolute;                                /* Fixa em relação ao container pai */
+  top: -30px;                                        /* Posiciona um pouco acima do topo do container */
+  left: -80px;                                       /* Posiciona um pouco à esquerda do container */
+  width: 230px;                                      /* Largura do círculo */
+  height: 230px;                                     /* Altura do círculo */
+  background: radial-gradient(circle, #e3eaff 60%, #d0e3ff 100%); /* Gradiente circular azul claro */
+  opacity: 0.4;                                      /* Transparência para ficar suave */
+  border-radius: 50%;                                /* Torna o shape perfeitamente circular */
+  z-index: 0;                                        /* Fica atrás do conteúdo principal */
 }
-.hero-content { position: relative; z-index: 1; }
+
+/* .hero-content: Garante que o conteúdo principal da hero section
+  fique acima do shape decorativo, usando z-index maior. */
+
+.hero-content {
+  position: relative;                    /* Cria contexto de empilhamento para z-index */
+  z-index: 1;                            /* Fica acima do bg-shape */
+}
 
 .hero-title {
   font-size: 2.5rem;         /* tamanho título */
@@ -170,15 +181,16 @@ body {
   position: relative;
   overflow: hidden;
 }
+
 .product-card::after {
   /* detalhe sutil com cor, visual Apple */
-  content: "";
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 8px;
-  background: linear-gradient(90deg,#0071e3 0%,#d0e3ff 100%);
-  opacity: 0.12;
-  border-radius: 0 0 16px 16px;
+  content: "";                                     /* Cria um pseudo-elemento vazio para efeito decorativo */
+  position: absolute;                              /* Posiciona em relação ao .product-card */
+  bottom: 0; left: 0; right: 0;                    /* Estica na base do card, de ponta a ponta */
+  height: 8px;                                     /* Altura pequena para a faixa decorativa */
+  background: linear-gradient(90deg, #0071e3 0%, #d0e3ff 100%); /* Gradiente azul Apple, da esquerda para direita */
+  opacity: 0.12;                                   /* Bem suave/transparente */
+  border-radius: 0 0 16px 16px;                    /* Arredonda só os cantos inferiores, acompanhando o card */
 }
 
 .product-card:hover {
@@ -229,24 +241,31 @@ body {
 
 /* Seção de texto geral */
 .section-content {
-  padding: 56px 0 30px 0;    /* espaçamento interno */
-  position: relative;
+  padding: 56px 0 30px 0;    /* Espaçamento interno: topo, lados e base */
+  position: relative;        /* Permite posicionar elementos filhos de forma absoluta em relação a esta seção */
 }
+
+/* .section-bg: Elemento decorativo de fundo na seção de conteúdo,
+  cria uma mancha circular azul clara no canto inferior direito da seção. */
+
 .section-content .section-bg {
-  /* detalhe visual sutil */
-  position: absolute;
-  right: -80px;
-  bottom: -40px;
-  width: 190px;
-  height: 170px;
-  background: radial-gradient(circle, #e3eaff 65%, #d0e3ff 100%);
-  opacity: 0.18;
-  border-radius: 50%;
-  z-index: 0;
+  position: absolute;                                   /* Fixa em relação à .section-content */
+  right: -80px;                                         /* Afasta para fora do lado direito */
+  bottom: -40px;                                        /* Afasta para fora da parte de baixo */
+  width: 190px;                                         /* Largura do círculo decorativo */
+  height: 170px;                                        /* Altura do círculo decorativo */
+  background: radial-gradient(circle, #e3eaff 65%, #d0e3ff 100%); /* Gradiente circular azul claro */
+  opacity: 0.18;                                        /* Bem transparente/sutil */
+  border-radius: 50%;                                   /* Forma circular */
+  z-index: 0;                                           /* Fica atrás do conteúdo principal */
 }
+
+/* Garante que todo o resto do conteúdo da .section-content
+  fique acima do shape decorativo de fundo (.section-bg). */
+
 .section-content > *:not(.section-bg) {
-  position: relative;
-  z-index: 1;
+  position: relative;                                   /* Cria contexto de empilhamento para z-index */
+  z-index: 1;                                           /* Fica acima do .section-bg */
 }
 
 /* Quem somos: lista de contato */
@@ -288,69 +307,81 @@ body {
 }
 
 /* Página exclusiva de produto */
+
+/* Cabeçalho da página do produto: centraliza o texto e ajusta espaçamento */
 .product-detail-header {
-  text-align: center;
-  padding-top: 36px;
-  padding-bottom: 12px;
-  color: #232323;
+  text-align: center;           /* Centraliza o texto */
+  padding-top: 36px;            /* Espaço acima */
+  padding-bottom: 12px;         /* Espaço abaixo */
+  color: #232323;               /* Cor escura para o texto */
 }
+
+/* Imagem principal do produto: centralizada, arredondada e com sombra */
 .product-detail-img {
-  display: block;
-  margin: 0 auto 26px auto;
-  width: 220px;
-  max-width: 90vw;
-  height: auto;
-  border-radius: 30px;
-  box-shadow: 0 6px 36px rgba(0,113,227,0.10), 0 0px 0px #fff;
-  background: #f6f8fa;
+  display: block;               /* Exibe como bloco para centralização */
+  margin: 0 auto 26px auto;     /* Centraliza e adiciona espaço abaixo */
+  width: 220px;                 /* Largura padrão */
+  max-width: 90vw;              /* Limita largura em telas pequenas */
+  height: auto;                 /* Altura automática para manter proporção */
+  border-radius: 30px;          /* Cantos bem arredondados */
+  box-shadow: 0 6px 36px rgba(0,113,227,0.10), 0 0px 0px #fff; /* Sombra azulada */
+  background: #f6f8fa;          /* Fundo cinza claro atrás da imagem */
 }
+
+/* Seção principal do produto: fundo gradiente, arredondada e centralizada */
 .product-detail-section {
-  background: linear-gradient(101deg, #f7faff 88%, #d3eafd 100%);
-  border-radius: 20px;
-  max-width: 780px;
-  margin: 0 auto 32px auto;
-  padding: 36px 32px 28px 32px;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.06);
-  position: relative;
+  background: linear-gradient(101deg, #f7faff 88%, #d3eafd 100%); /* Gradiente azul-claro */
+  border-radius: 20px;          /* Bordas arredondadas */
+  max-width: 780px;             /* Largura máxima */
+  margin: 0 auto 32px auto;     /* Centraliza e adiciona espaço abaixo */
+  padding: 36px 32px 28px 32px; /* Espaçamento interno */
+  box-shadow: 0 6px 24px rgba(0,0,0,0.06); /* Sombra leve */
+  position: relative;           /* Permite uso de elementos posicionados dentro */
 }
+
+/* .detail-bg: Elemento decorativo de fundo na seção do produto,
+  cria uma mancha circular azul clara ao lado do conteúdo. */
 
 .product-detail-section .detail-bg {
-  position: absolute;
-  left: -90px;
-  top: 50%;
-  width: 150px;
-  height: 150px;
-  background: radial-gradient(circle, #d0e3ff 60%, #fff 100%);
-  opacity: 0.14;
-  border-radius: 50%;
-  z-index: 0;
-}
-.product-detail-section > *:not(.detail-bg) {
-  position: relative;
-  z-index: 1;
-}
-.product-detail-section h2 {
-  color: #0071e3;
-  font-size: 2.1rem;
-  margin-bottom: 18px;
-}
-.product-detail-section p {
-  font-size: 1.15rem;
-  color: #222;
-  margin-bottom: 16px;
-  line-height: 1.6;
-}
-.product-detail-features {
-  margin: 18px 0 0 0;
-  padding: 0 0 0 16px;
-}
-.product-detail-features li {
-  font-size: 1.06rem;
-  color: #2a2a2a;
-  margin-bottom: 6px;
-  list-style: disc;
+  position: absolute;                                   /* Fixa em relação à .product-detail-section */
+  left: -90px;                                          /* Posiciona para fora da borda esquerda */
+  top: 50%;                                             /* Centraliza verticalmente */
+  width: 150px;                                         /* Largura do círculo */
+  height: 150px;                                        /* Altura do círculo */
+  background: radial-gradient(circle, #d0e3ff 60%, #fff 100%); /* Gradiente circular azul-claro */
+  opacity: 0.14;                                        /* Super transparente/sutil */
+  border-radius: 50%;                                   /* Forma circular */
+  z-index: 0;                                           /* Fica atrás do conteúdo principal */
 }
 
+/* Garante que todo o conteúdo principal da seção do produto
+  fique acima do background decorativo. */
+
+.product-detail-section > *:not(.detail-bg) {
+  position: relative;                                   /* Cria novo contexto de empilhamento */
+  z-index: 1;                                           /* Fica acima do .detail-bg */
+}
+
+/* Título da seção do produto */
+.product-detail-section h2 {
+  color: #0071e3;                                       /* Azul Apple */
+  font-size: 2.1rem;                                    /* Tamanho grande */
+  margin-bottom: 18px;                                  /* Espaço abaixo */
+}
+
+/* Parágrafos da seção do produto */
+.product-detail-section p {
+  font-size: 1.15rem;                                   /* Texto maior para leitura confortável */
+  color: #222;                                          /* Cinza escuro */
+  margin-bottom: 16px;                                  /* Espaço abaixo */
+  line-height: 1.6;                                     /* Espaçamento entre linhas */
+}
+
+/* Lista de características do produto */
+.product-detail-features {
+  margin: 18px 0 0 0;                                   /* Espaço acima */
+  padding: 0 *
+
 /* Responsividade para dispositivos móveis */
 @media (max-width: 900px) {
   .nav-container {
@@ -366,7 +397,7 @@ body {
     gap: 18px;               /* espaço menor */
   }
   .product-detail-section {
-    padding: 24px 10px 18px 10px;
+    padding: 24px 10px 18px 10px; /* Espaçamento interno: cima, laterais, embaixo */
   }
 }
 
@@ -401,8 +432,10 @@ body {
     max-width: 99vw;         /* largura total mobile */
   }
   .product-detail-img {
-    width: 98vw;
-    max-width: 98vw;
+    width: 98vw;          /* Ocupa 98% da largura da janela de visualização (viewport) */
+    max-width: 98vw;      /* Garante que a largura máxima não ultrapasse 98% da viewport */
   }
-  .product-detail-section h2 { font-size: 1.2rem; }
+  
+  /* Define o tamanho do título h2 na seção de detalhes do produto para 1.2 vezes o tamanho padrão do texto */
+  .product-detail-section h2 { font-size: 1.2rem; } 
 }
