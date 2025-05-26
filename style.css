@@ -274,21 +274,13 @@ body {
 }
 
 /* Rodapé fixo em todas as páginas */
-.footer {
-  background: #f2f2f2;       /* fundo rodapé */
-  color: #888;               /* texto rodapé */
-  text-align: center;        /* centraliza texto */
-  padding: 12px 0 6px 0;     /* espaçamento interno menor */
-  font-size: 0.92em;         /* fonte menor */
-  border-top: 1px solid #eaeaea; /* borda topo */
-  margin-top: 40px;          /* espaço acima */
-  letter-spacing: 0.2px;
-}
-.footer .copyright {
-  font-size: 0.88em;         /* fonte ainda menor */
-  color: #aaa;               /* cor mais clara */
-  margin-top: 2px;
-  opacity: 0.85;
+.copyright {
+  text-align: center;      /* Centraliza o texto */
+  font-size: 0.92em;       /* Um pouco menor que o normal */
+  color: #aaa;             /* Cinza bem claro, pouco destaque */
+  margin: 28px 0 10px 0;   /* Espaço acima e abaixo */
+  font-weight: 400;        /* Peso normal */
+  letter-spacing: 0.5px;   /* Suave */
 }
 
 /* Página exclusiva de produto */
