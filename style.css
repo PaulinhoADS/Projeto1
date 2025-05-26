@@ -347,7 +347,7 @@ body {
   list-style: disc;
 }
 
-/* Responsividade para tablets e smartphones */
+/* Responsividade para dispositivos móveis */
 @media (max-width: 900px) {
   .nav-container {
     flex-direction: column;  /* menu vertical */
@@ -402,12 +402,3 @@ body {
   }
   .product-detail-section h2 { font-size: 1.2rem; }
 }
-
-/* Comentários explicativos:
-- .container centraliza e limita largura
-- .header/.footer fixos para navegação e identificação
-- .product-card para produtos do portfólio e home
-- .product-detail-section estiliza página individual do produto
-- Toques de cor: gradientes, shapes circulares, barras coloridas
-- Rodapé © com fonte pequena e discreta
-*/
