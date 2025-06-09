@@ -117,21 +117,6 @@ body {
   position: relative;
 }
 
-/* .hero-bg-shape: Elemento decorativo do fundo da seção de destaque (hero).
-  Cria uma "mancha" circular suave, estilo Apple, atrás do conteúdo principal. */
-
-.hero-bg-shape {
-  position: absolute;                                /* Fixa em relação ao container pai */
-  top: -30px;                                        /* Posiciona um pouco acima do topo do container */
-  left: -80px;                                       /* Posiciona um pouco à esquerda do container */
-  width: 230px;                                      /* Largura do círculo */
-  height: 230px;                                     /* Altura do círculo */
-  background: radial-gradient(circle, #e3eaff 60%, #d0e3ff 100%); /* Gradiente circular azul claro */
-  opacity: 0.4;                                      /* Transparência para ficar suave */
-  border-radius: 50%;                                /* Torna o shape perfeitamente circular */
-  z-index: 0;                                        /* Fica atrás do conteúdo principal */
-}
-
 /* .hero-content: Garante que o conteúdo principal da hero section
   fique acima do shape decorativo, usando z-index maior. */
 
